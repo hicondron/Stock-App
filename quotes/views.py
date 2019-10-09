@@ -1,5 +1,6 @@
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from .models import Stock
 
 def home(request):
 	import requests 
@@ -22,4 +23,8 @@ def about(request):
         return render(request, 'about.html', {})
 
 def add_stock(request):
-		return render(request, 'add_stock.html',{})
+
+		ticker = Stock.objects.all()
+		output = []
+		
+		return render(request, 'add_stock.html',{"ticker": ticker})
