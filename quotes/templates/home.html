@@ -7,7 +7,7 @@
 {% endif %}
 
 {% if api %}
-        {% if api == "Error...." %}
+        {% if api == "Error..." %}
             There was a problem with your ticker symbol, please try again... 
 
         {% else %}
@@ -20,7 +20,7 @@
             52 Week High: ${{ api.week52High }} <br/>
             52 Week Low: ${{ api.week52Low }} <br/>
 
-            
+
         {% endif %}
 {% endif %}
 
