@@ -63,3 +63,6 @@ def delete(request, stock_id):
 	messages.success(request, ("Stock Has Been Deleted!"))
 	return redirect(delete_stock)
 
+def delete_stock(request):
+	ticker = Stock.objects.all()
+	return render(request, 'delete_stock.html', {'ticker': ticker})
