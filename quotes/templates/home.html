@@ -1,27 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 
-{% block content %}
+<link rel="stylesheet" href="{ % static, 'css/main.css' % }">
 
-{% if ticker %}
-        {{ticker}}
-{% endif %}
+<header>
+    
+    <div class= "home_info">
+    <h1> INVEST FOR WHAT REALLY MATTERS </h1>
+    
+    <h3>Whether you're new to investing or a seasoned pro, it's time to partner with a company that believes you could—and should—be getting more from your money.</h3>
+</div>
+    {% if ticker %} {{ticker}} {% endif %} {% if api %} {% if api == "Error..." %} There was a problem with your ticker symbol, please try again... {% else %}
 
-{% if api %}
-        {% if api == "Error..." %}
-            There was a problem with your ticker symbol, please try again... 
-
-        {% else %}
-
-            <h1>{{ api.companyName }} </h1> <br/>
-            Price: ${{ api.latestPrice }} <br/>
-            Previous Close: ${{ api.previousClose }} <br/>
-            Market Cap: {{ api.marketCap }} <br/>
-            YTD Change: {{ api.ytdChange }} <br/>
-            52 Week High: ${{ api.week52High }} <br/>
-            52 Week Low: ${{ api.week52Low }} <br/>
-
-
-        {% endif %}
-{% endif %}
-
+    <h1>{{ api.companyName }} </h1> <br/> Price: ${{ api.latestPrice }} <br/> Previous Close: ${{ api.previousClose }} <br/> Market Cap: {{ api.marketCap }} <br/> YTD Change: {{ api.ytdChange }} <br/> 52 Week High: ${{ api.week52High }} <br/> 52 Week Low:
+    ${{ api.week52Low }} <br/> {% endif %} {% endif %}
+</header>
 {% endblock %}
