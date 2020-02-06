@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 psycopg2==2.7.2
-||||||| merged common ancestors
-=======
 backports.functools-lru-cache==1.6.1
 caniusepython3==7.2.0
 certifi==2019.11.28
@@ -19,4 +16,3 @@ style==1.1.0
 update==0.0.1
 urllib3==1.25.8
 django-heroku
->>>>>>> 5ba978d33b3c3c2ce3593038400e415d4c61e878
